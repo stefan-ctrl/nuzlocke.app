@@ -31,7 +31,7 @@
 </span>
 
 <div
-  in:fade
+  in:fade|global
   class:bg-gray-50={open}
   class:dark:bg-gray-800={open}
   class:pl-4={open}
@@ -42,7 +42,7 @@
     <div
       class='absolute w-4/5 pointer-events-auto'
       bind:this={inputRef}
-      in:fly={{ x: -450, duration: 350 }}
+      in:fly|global={{ x: -450, duration: 350 }}
     >
       <SearchBar bind:term />
     </div>

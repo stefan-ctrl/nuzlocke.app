@@ -93,10 +93,10 @@
       data-drag-id={i}
       data-drag-action="replace"
       class:opacity-50={over && +over === i}
-      ondragover="return false"
+      on:dragover={() => false}
       class="group relative h-10 w-10 cursor-pointer transition"
     >
-      <span class="pointer-events-none" in:scale={{ duration: 500 }}>
+      <span class="pointer-events-none" in:scale|global={{ duration: 500 }}>
         <PIcon
           class="pointer-events-none absolute left-1/2 top-1/2 -mt-0.5 -translate-y-1/2 -translate-x-1/2 opacity-30 dark:opacity-80 dark:contrast-50"
           name="unknown-pokemon2"
@@ -125,7 +125,7 @@
         class:opacity-40={over && +over === i + mons.length}
         data-drag-id={i + mons.length}
         data-drag-action="add"
-        ondragover="return false"
+        on:dragover={() => false}
         class="group relative h-10 w-10 cursor-pointer transition"
       >
         <PIcon

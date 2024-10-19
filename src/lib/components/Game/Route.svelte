@@ -127,8 +127,8 @@
       <li
         class="flex items-center gap-x-2"
         id="route-{p.name}"
-        in:fade
-        out:fade={{ duration: 100 }}
+        in:fade|global
+        out:fade|global={{ duration: 100 }}
         class:hidden={hidden || !showStarterRoute(p, filters, hideRoute)}
       >
         <PokemonSelector
@@ -157,8 +157,8 @@
       <li
         class="location"
         id="route-{p.name}"
-        in:fade
-        out:fade={{ duration: 100 }}
+        in:fade|global
+        out:fade|global={{ duration: 100 }}
         class:hidden={hidden || !showRoute(p, filters, hideRoute)}
       >
         <PokemonSelector
@@ -175,8 +175,8 @@
       <li
         class="location flex items-center gap-x-2"
         id="custom-{p.index}"
-        in:fade
-        out:fade={{ duration: 100 }}
+        in:fade|global
+        out:fade|global={{ duration: 100 }}
         class:hidden={hidden || !showCustom(p, filters, hideRoute)}
       >
         <PokemonSelector
@@ -198,8 +198,8 @@
         class="boss -mb-4 md:my-2"
         class:hidden={hidden || !showGym(p, filters)}
         id="boss-{id}"
-        in:fade
-        out:fade={{ duration: 100 }}
+        in:fade|global
+        out:fade|global={{ duration: 100 }}
       >
         <GymCard
           forceVs

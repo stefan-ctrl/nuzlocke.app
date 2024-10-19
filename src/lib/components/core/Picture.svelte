@@ -3,17 +3,32 @@
   import { fade } from 'svelte/transition'
 
   const [width, height] = aspect.split('x')
+
+  function handleSourceError(event) {
+    event.target.onerror = null
+    event.target.style.display = 'none'
+  }
+
+  function handleImgError(event) {
+    event.target.onerror = null
+    // Hide the <source> and <img> if image fails to load
+    if (event.target.parentNode && event.target.parentNode.children.length > 1) {
+      event.target.parentNode.children[0].srcset = ''
+      event.target.parentNode.children[1].srcset = ''
+    }
+    event.target.style.display = 'none'
+  }
 </script>
 
 {#if fadeIn}
-<picture class={$$restProps.class || ''} in:fade>
-  <source onError="this.onerror = null; this.style.display = 'none'" srcset='{src}.webp' type='image/webp' />
-  <img class='{className}' class:pixelated={pixelated} src='{src}.png' {loading} {width} {height} {alt} {role} onerror='this.onerror = null; this.parentNode.children[0].srcset = this.parentNode.children[1].srcset = this.src'/>
+<picture class={$$restProps.class || ''} in:fade|global>
+  <source on:error={handleSourceError} srcset='{src}.webp' type='image/webp' />
+  <img class='{className}' class:pixelated={pixelated} src='{src}.png' {loading} {width} {height} {alt} {role} on:error={handleImgError}/>
 </picture>
 {:else}
 <picture class={$$restProps.class || ''}>
-  <source onError="this.onerror = null; this.style.display = 'none'" srcset='{src}.webp' type='image/webp' />
-  <img class='{className}' class:pixelated={pixelated} src='{src}.png' {loading} {width} {height} {alt} {role} onerror='this.onerror = null; this.parentNode.children[0].srcset = this.parentNode.children[1].srcset = this.src'/>
+  <source on:error={handleSourceError} srcset='{src}.webp' type='image/webp' />
+  <img class='{className}' class:pixelated={pixelated} src='{src}.png' {loading} {width} {height} {alt} {role} on:error={handleImgError}/>
 </picture>
 {/if}
 

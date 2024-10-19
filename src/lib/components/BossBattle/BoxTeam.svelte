@@ -48,8 +48,8 @@
           class="selected relative mx-auto h-10 w-10"
           on:click={select(og)}
           animate:flip={{ duration: 200 }}
-          in:receive={{ key: locid(og) }}
-          out:send={{ key: locid(og) }}
+          in:receive|global={{ key: locid(og) }}
+          out:send|global={{ key: locid(og) }}
         >
           <PIcon class="picon" name={og.pokemon} />
         </button>
@@ -100,8 +100,8 @@
             disabled={team.length === 6}
             on:click={select(og)}
             animate:flip={{ duration: 200 }}
-            in:receive={{ key: locid(og) }}
-            out:send={{ key: locid(og) }}
+            in:receive|global={{ key: locid(og) }}
+            out:send|global={{ key: locid(og) }}
           >
             <PIcon class="picon -scale-x-100" name={og.pokemon} />
           </button>

@@ -88,7 +88,7 @@
 >
   <div
     class="snap-start scroll-mt-4 px-4 pt-14 sm:px-8 md:pt-14"
-    in:fade={{ duration: 500, delay: 200 }}
+    in:fade|global={{ duration: 500, delay: 200 }}
   >
     {#if !graveyard.length}
       <span
@@ -134,7 +134,7 @@
               class="flex {j % 2
                 ? 'flex-row-reverse'
                 : 'flex-row'} snap-start -scroll-mt-2 items-center justify-between max-sm:mt-10 max-sm:px-6 md:inline-block"
-              in:fade={{
+              in:fade|global={{
                 duration: 800,
                 delay:
                   Math.min(3000 / graveyard.length, 500) * (i * chunkSize + j) +
