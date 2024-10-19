@@ -229,8 +229,8 @@
   <Loader />
 {:else}
   <div
-    out:fade|local={{ duration: 250 }}
-    in:fade|local={{ duration: 250, delay: 300 }}
+    out:fade={{ duration: 250 }}
+    in:fade={{ duration: 250, delay: 300 }}
     class="container mx-auto"
   >
     <div class="mx-auto flex flex-col items-center justify-center">

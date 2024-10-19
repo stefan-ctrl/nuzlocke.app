@@ -25,7 +25,7 @@
 
 <SettingWrapper id="theme" let:setting={themeId}>
   <section
-    in:fade|local
+    in:fade
     class="relative shadow-lg dark:text-gray-50 {className}"
   >
     <!-- Pokemon face off -->
@@ -35,7 +35,7 @@
       <!-- Colouring for types -->
       {#key `atk__${atk.name}`}
         <div
-          in:fade={{ duration: 400, delay: 100 }}
+          in:fade|global={{ duration: 400, delay: 100 }}
           class="absolute bottom-0 top-0 left-0 mt-8 overflow-hidden rounded-tl-lg"
           style="width: 50%; background: {color(atk.types, themeId)};"
         >
@@ -50,7 +50,7 @@
 
       {#key `def__${def.name}`}
         <div
-          in:fade={{ duration: 400, delay: 100 }}
+          in:fade|global={{ duration: 400, delay: 100 }}
           class="absolute bottom-0 top-0 left-1/2 mt-8 overflow-hidden rounded-tr-lg"
           style="width: 50%; background: {color(def.types, themeId)};"
         >
@@ -71,7 +71,7 @@
       {#key `atk__${atk.name}`}
         <img
           alt={atk.name}
-          in:fade={{ duration: 500 }}
+          in:fade|global={{ duration: 500 }}
           class="flip z-20 -mx-6 flex h-32 w-32"
           style="transform: scaleX(-1); "
           src={sprite(atk, atk.status)}
@@ -80,7 +80,7 @@
       {#key `def__${def.name}`}
         <img
           alt={def.name}
-          in:fade={{ duration: 500 }}
+          in:fade|global={{ duration: 500 }}
           class="z-20 -mx-6 flex h-32 w-32"
           src={sprite(def)}
         />

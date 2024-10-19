@@ -6,7 +6,7 @@
 </script>
 
 {#if fadeIn}
-<picture class={$$restProps.class || ''} in:fade>
+<picture class={$$restProps.class || ''} in:fade|global>
   <source onError="this.onerror = null; this.style.display = 'none'" srcset='{src}.webp' type='image/webp' />
   <img class='{className}' class:pixelated={pixelated} src='{src}.png' {loading} {width} {height} {alt} {role} onerror='this.onerror = null; this.parentNode.children[0].srcset = this.parentNode.children[1].srcset = this.src'/>
 </picture>

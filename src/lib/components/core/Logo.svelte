@@ -5,7 +5,7 @@
   const [width, height] = aspect.split('x')
 </script>
 
-<picture in:fade class={pictureClass || ''}>
+<picture in:fade|global class={pictureClass || ''}>
   <source media="(min-width: 800px)" srcset='{src}@2.webp 1x' type='image/webp' />
   {#if loading === 'eager'}
     <source srcset='{src}@2.webp x2' type='image/webp' />

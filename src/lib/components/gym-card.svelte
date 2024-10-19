@@ -118,7 +118,7 @@
       class="-mt-4 inline-flex h-16 items-center gap-x-2 text-left"
     >
       {#if defeated && !loading}
-        <div class="z-50 -ml-2 w-0" in:fade={{ delay: 150 }}>
+        <div class="z-50 -ml-2 w-0" in:fade|global={{ delay: 150 }}>
           <span
             class="grayscale-1 absolute top-4 left-2 -mx-2 -rotate-30 scale-75 border-2 border-red-600 bg-red-300 pl-2 pr-1.5 font-mono text-base font-bold uppercase leading-4 tracking-widest text-red-700 md:left-12 md:scale-100"
           >

@@ -29,7 +29,7 @@
       animate:flip
     >
       <img
-        in:fade={{ duration: 200 }}
+        in:fade|global={{ duration: 200 }}
         style="--bob-delay: {(2 * i) / 10}s"
         alt={p.name}
         src={sprite(p)}

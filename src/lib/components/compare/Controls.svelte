@@ -65,7 +65,7 @@
     {#each pages[page] as p, i (p)}
       {@const selected = value === page * pageSize + i}
       <button
-        in:fade={{ duration: 300, delay: 50 }}
+        in:fade|global={{ duration: 300, delay: 50 }}
         class:opacity-50={!selected}
         class:grayscale={!selected}
         class:scale-125={selected}

@@ -5,7 +5,7 @@
 
 <div class='pointer-events-none fixed md:overflow-hidden inset-0 fog'>
   <div class='relative w-full h-full opacity-50'>
-    <span in:fade={{ duration: 1800, delay: 550 }}>
+    <span in:fade|global={{ duration: 1800, delay: 550 }}>
       <div class='absolute top-0 bottom-0 animate flex overflow-hidden'>
         <picture class='h-full translate-y-1/3 w-1/2'>
           <source srcset="{IMG}/graves/fog@2.webp" media="(min-width: 620px)" type="image/webp" />
@@ -30,7 +30,7 @@
       </div>
     </span>
 
-    <span in:fade={{ duration: 2250, delay: 200 }}>
+    <span in:fade|global={{ duration: 2250, delay: 200 }}>
       <div class='absolute top-0 bottom-0 animate-slow flex overflow-hidden'>
         <picture class='h-full rotate-180 -translate-y-1/3 w-1/2'>
           <source srcset="{IMG}/graves/fog@2.webp" media="(min-width: 620px)" type="image/webp" />

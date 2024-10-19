@@ -88,7 +88,7 @@
         {#each links as { title, href, color, aria } (href)}
           <a
             animate:animflip
-            in:fly={{ x: -50 }}
+            in:fly|global={{ x: -50 }}
             class="group tracking-widest hover:drop-shadow-text {color}"
             {href}
             aria-label={aria}
@@ -138,8 +138,8 @@
               rel="external"
               alt="Pokemon #{id}"
               class="absolute right-0 -my-2 -ml-12 w-full transition md:-my-12"
-              out:fly={{ y: distance, duration }}
-              in:fly={{ y: -distance, duration }}
+              out:fly|global={{ y: distance, duration }}
+              in:fly|global={{ y: -distance, duration }}
             />
           {/if}
           {#if flip}
@@ -148,13 +148,13 @@
               rel="external"
               alt="Pokemon #{id}"
               class="absolute right-0 -my-2 -ml-12 w-full transition md:-my-12"
-              out:fly={{ y: distance, duration }}
-              in:fly={{ y: -distance, duration }}
+              out:fly|global={{ y: distance, duration }}
+              in:fly|global={{ y: -distance, duration }}
             />
           {/if}
         {:else}
           <div
-            in:fly={{ y: -distance, duration }}
+            in:fly|global={{ y: -distance, duration }}
             class="absolute mt-14 -ml-4 inline-grid w-20 origin-left -translate-y-1/2 scale-200 transform grid-cols-2 transition md:mt-12 md:ml-0 md:w-24 md:grid-cols-3"
           >
             {#each summary.team as icon, i}

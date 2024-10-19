@@ -4,14 +4,14 @@
     "es2021": true
   },
   "plugins": [
-    "svelte3"
+    "svelte4"
   ],
   "overrides": [
     {
       "files": [
         "*.svelte"
       ],
-      "processor": "svelte3/svelte3"
+      "processor": "svelte4/svelte4",
     }
   ],
   "extends": "eslint:recommended",

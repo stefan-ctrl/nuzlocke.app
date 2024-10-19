@@ -120,7 +120,7 @@
 
 <!-- Team selcetor -->
 {#if ctx?.trainer}
-  <div in:slide class="w-full">
+  <div in:slide|global class="w-full">
     <AutoComplete
       on:change={resetattack}
       bind:search={ctx.opponentSearch}
@@ -140,7 +140,7 @@
 {/if}
 
 {#if ctx?.opponent}
-  <div in:slide class="w-full">
+  <div in:slide|global class="w-full">
     <AutoComplete
       bind:search={ctx.attackSearch}
       bind:selected={ctx.attack}
