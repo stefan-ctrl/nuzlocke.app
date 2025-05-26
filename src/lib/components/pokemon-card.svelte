@@ -114,7 +114,11 @@
             style="--v-anim-dur: {animDur}s; --v-anim-delay: {animDelay}s"
             class="{anim} img__pkm pointer-events-none h-40 w-auto -translate-y-16"
             src={sprite}
-            onerror="this.onerror=null;this.src='{fallback}'"
+            on:error={(event) => {
+              const img = event.currentTarget;
+              img.onerror = null;
+              img.src = fallback;
+            }}
             alt={name}
           />
         {:else}

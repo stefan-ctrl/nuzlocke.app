@@ -129,7 +129,7 @@
       title="Clear your team"
       disabled={!mons?.length}
       borderless
-      containerClassName=" rounded-full !border-gray-900 z-50 -translate-x-3/4 md:translate-x-1/2 md:mt-1"
+      containerClassName=" rounded-full !border-neutral-900 z-50 -translate-x-3/4 md:translate-x-1/2 md:mt-1"
       src={X}
     />
   </div>

@@ -5,7 +5,7 @@
   import { Home } from '$icons'
 
   import ThemeToggle from '$lib/components/theme-toggle.svelte'
-
+  import { base } from '$app/paths';
 </script>
 
 
@@ -13,7 +13,7 @@
   <div class=p-container>
     {#if $page.url.pathname !== '/'}
       <a
-        href=/
+        href={base}/
         rel=external
         aria-label=Home
         >

@@ -93,7 +93,7 @@
       data-drag-id={i}
       data-drag-action="replace"
       class:opacity-50={over && +over === i}
-      ondragover="return false"
+      on:dragover={() => false}
       class="group relative h-10 w-10 cursor-pointer transition"
     >
       <span class="pointer-events-none" in:scale|global={{ duration: 500 }}>
@@ -125,7 +125,7 @@
         class:opacity-40={over && +over === i + mons.length}
         data-drag-id={i + mons.length}
         data-drag-action="add"
-        ondragover="return false"
+        on:dragover={() => false}
         class="group relative h-10 w-10 cursor-pointer transition"
       >
         <PIcon

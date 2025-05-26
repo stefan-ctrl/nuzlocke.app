@@ -1,5 +1,6 @@
 const colors = require('tailwindcss/colors');
 
+/** @type {import('tailwindcss').Config} */
 const config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -15,7 +16,7 @@ const config = {
       fontSize: {
         tiny: '12px',
         xxs: '16px'
-        },
+      },
       rotate: {
         30: '30deg'
       },

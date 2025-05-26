@@ -25,7 +25,11 @@
        {alt}
        {role}
        srcset="{src}@1.png 300w, {src}@2.png 600w"
-       onerror='this.onerror = null; this.parentNode.children[0].srcset = this.parentNode.children[1].srcset = this.src'
+       on:error={() => {
+         const img = event.currentTarget;
+         img.onerror = null;
+         img.parentNode.children[0].srcset = img.parentNode.children[1].srcset = img.src;
+       }}
        />
 </picture>
 

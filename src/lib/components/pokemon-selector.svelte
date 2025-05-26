@@ -717,3 +717,4 @@
     @apply bg-orange-500 text-white;
   }
 </style>
+

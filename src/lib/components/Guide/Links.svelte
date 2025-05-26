@@ -2,6 +2,7 @@
   export let links
   import { SVGs } from './'
   const order = ['romhack', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
+  import { base } from '$app/paths';
 </script>
 
 <nav>
@@ -16,7 +17,7 @@
           <h3>{id.startsWith('rom') ? 'Rom hacks' : `Gen ${id}`}</h3>
           {#each links[id] as { href, logo, title }}
             <a
-              {href}
+              href="{base}/{href}"
               data-sveltekit-reload
               title='Pokémon {title} Nuzlocke Guide'>
               Pokémon {title}
