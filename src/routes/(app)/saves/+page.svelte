@@ -34,7 +34,7 @@
 >
   <ScreenContainer containerClassName='pb-48 mb-0 sm:mb-0 md:mb-0' title='Load game' icon={Floppy}>
 
-    <div class='flex flex-col gap-y-8 md:gap-y-4' transition:slide={{ duration: 300 }}>
+    <div class='flex flex-col gap-y-8 md:gap-y-4' transition:slide|global={{ duration: 300 }}>
       {#if loading}
         <div class='flex flex-row justify-between items-center gap-x-24 mt-2'>
           <div class='flex flex-row items-center'>

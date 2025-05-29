@@ -90,7 +90,7 @@
 </script>
 
 {#await setup() then}
-  <div transition:fade|local={{ delay: 500 }} class="safe-bottom">
+  <div transition:fade={{ delay: 500 }} class="safe-bottom">
     <MiniTeam
       class="transform max-md:scale-75 md:pl-8 {$$restProps.class || ''}"
       iconKey="pokemon"
@@ -103,8 +103,8 @@
 
     {#if !mons.length && boxLength}
       <small
-        in:fade={{ duration: 500 }}
-        out:fade={{ duration: 200 }}
+        in:fade|global={{ duration: 500 }}
+        out:fade|global={{ duration: 200 }}
         class:hidden={seenTeam}
         class="absolute left-1/2 mb-1 w-full -translate-x-1/2 translate-y-full italic text-gray-500 md:bottom-2 md:block"
       >

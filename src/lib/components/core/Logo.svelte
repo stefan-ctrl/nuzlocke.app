@@ -5,7 +5,7 @@
   const [width, height] = aspect.split('x')
 </script>
 
-<picture in:fade class={pictureClass || ''}>
+<picture in:fade|global class={pictureClass || ''}>
   <source media="(min-width: 800px)" srcset='{src}@2.webp 1x' type='image/webp' />
   {#if loading === 'eager'}
     <source srcset='{src}@2.webp x2' type='image/webp' />
@@ -25,7 +25,11 @@
        {alt}
        {role}
        srcset="{src}@1.png 300w, {src}@2.png 600w"
-       onerror='this.onerror = null; this.parentNode.children[0].srcset = this.parentNode.children[1].srcset = this.src'
+       on:error={() => {
+         const img = event.currentTarget;
+         img.onerror = null;
+         img.parentNode.children[0].srcset = img.parentNode.children[1].srcset = img.src;
+       }}
        />
 </picture>
 

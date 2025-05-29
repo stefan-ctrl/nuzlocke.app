@@ -38,7 +38,7 @@
 {#if !jsenabled || isOpen}
   <div
     class:hidden={!isOpen}
-    in:slide={{ duration: 300 }}
+    in:slide|global={{ duration: 300 }}
     >
     <slot name="item" />
   </div>

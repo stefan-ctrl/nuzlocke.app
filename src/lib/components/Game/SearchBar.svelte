@@ -18,7 +18,7 @@
 >
   {#if term}
     <button
-      transition:fade
+      transition:fade|global
       on:click={clearterm}
       title='Clear search'
       class='absolute right-0 top-0 bottom-0 px-2 text-gray-500 hover:text-gray-800 dark:hover:text-gray-100 transition {$$restProps.class || ''}'

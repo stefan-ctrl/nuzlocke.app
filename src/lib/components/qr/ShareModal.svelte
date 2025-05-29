@@ -49,13 +49,13 @@
   <span style="pmin-height: 320px;">
     {#await fetchcode({ data, save }) then res}
       {@const code = res.code.toUpperCase()}
-      <button on:click={handlecopy(code)} transition:fade>
+      <button on:click={handlecopy(code)} transition:fade|global>
         <mark class="text-4xl font-bold uppercase tracking-widest md:text-6xl">
           {code}
         </mark>
       </button>
 
-      <div transition:fade class="mt-4 bg-white p-2">
+      <div transition:fade|global class="mt-4 bg-white p-2">
         <QRCode value="{$page.url.origin}/drop/{code}" />
       </div>
     {/await}
@@ -64,7 +64,7 @@
 
 {#if copy}
   <div
-    transition:fly={{ y: 50 }}
+    transition:fly|global={{ y: 50 }}
     class="fixed bottom-0 left-0 z-50 w-full px-4 md:left-1/2 md:w-auto md:-translate-x-1/2"
   >
     <div

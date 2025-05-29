@@ -80,7 +80,7 @@
           />
 
           <h1
-            in:fade
+            in:fade|global
             class="hidden group-hover:border-black dark:group-hover:border-white lg:block lg:line-clamp-1"
             class:sm:text-xl={game?.name?.length <= 20}
             class:sm:text-lg={game?.name?.length > 20}
@@ -116,8 +116,8 @@
           </span>
 
           <ul
-            in:fly={{ duration: 250, y: 50 }}
-            out:fade={{ duration: 100 }}
+            in:fly|global={{ duration: 250, y: 50 }}
+            out:fade|global={{ duration: 100 }}
             class="popover mt-6 ml-4 flex max-h-[80vh] w-60 flex-col divide-y overflow-scroll rounded-xl bg-white shadow-lg dark:divide-gray-700 dark:bg-gray-900 sm:mt-4 sm:ml-2"
             slot="popover"
           >

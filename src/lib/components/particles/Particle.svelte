@@ -30,7 +30,7 @@
 </script>
 
 <span
-  out:fade
+  out:fade|global
   class='absolute flex items-center justify-center pointer-events-none {className}'
   style='left: {x}px; top: {y}px; transform: rotate({tiltTheta}rad) scale({scale});'
   >

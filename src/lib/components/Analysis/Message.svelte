@@ -15,7 +15,7 @@
 
 {#if !gapTypes.length}
 
-  <div in:fade style='max-width: fit-content' class='mx-auto mb-4 mt-3 overflow-hidden rounded-xl shadow-lg bg-yellow-50 flex items-center'>
+  <div in:fade|global style='max-width: fit-content' class='mx-auto mb-4 mt-3 overflow-hidden rounded-xl shadow-lg bg-yellow-50 flex items-center'>
     <Icon color=yellow size=xs
           icons={[ shardicons, sashicons ]}
           {scale}>
@@ -28,7 +28,7 @@
   </div>
 
   {#if weakTypes.length}
-    <p in:fade class='text-center my-4 text-sm'>
+    <p in:fade|global class='text-center my-4 text-sm'>
       But you have <b>poor</b> coverage against
       {#each weakTypes as type, i}
         <span class=ml-1>
@@ -46,7 +46,7 @@
 
 {:else}
 
-  <div in:fade style='max-width: fit-content' class='overflow-hidden rounded-xl shadow-lg border dark:border-none flex items-center my-3 bg-red-200 mx-auto'>
+  <div in:fade|global style='max-width: fit-content' class='overflow-hidden rounded-xl shadow-lg border dark:border-none flex items-center my-3 bg-red-200 mx-auto'>
     <Icon inline={true} color=red height=xs icons={[]}>
       😱
     </Icon>
@@ -62,7 +62,7 @@
 
   <slot />
 
-  <p class='mb-2 mt-4' in:fade={{ delay: 1800 }}>
+  <p class='mb-2 mt-4' in:fade|global={{ delay: 1800 }}>
     You should add some
     {#each suggestions.slice(0, 3) as type, i}
       <span class=ml-1>

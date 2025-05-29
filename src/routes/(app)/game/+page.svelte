@@ -139,8 +139,8 @@
 {:then route}
   <div
     id="game_el"
-    out:fade|local={{ duration: 250 }}
-    in:fade|local={{ duration: 250, delay: 300 }}
+    out:fade={{ duration: 250 }}
+    in:fade={{ duration: 250, delay: 300 }}
     class="container mx-auto overflow-hidden pb-24"
   >
     <div class="flex snap-start flex-row flex-wrap justify-center pb-16">
@@ -154,7 +154,7 @@
           <div class="flex w-full flex-col gap-y-2">
             {#if filter === 'nuzlocke'}
               <button
-                transition:slide={{ duration: 250 }}
+                transition:slide|global={{ duration: 250 }}
                 class="inline-flex items-center text-sm"
                 on:click={routeEl.setroute(latestnav(route, gameData))}
               >
@@ -166,7 +166,7 @@
             <Tabs name="filter" tabs={filters} bind:selected={filter} />
 
             {#if filter === 'bosses'}
-              <span transition:slide={{ duration: 250 }}>
+              <span transition:slide|global={{ duration: 250 }}>
                 <Tabs
                   name="bosses"
                   tabs={bossFilters}
@@ -176,7 +176,7 @@
             {/if}
 
             {#if filter === 'route'}
-              <span transition:slide={{ duration: 250 }}>
+              <span transition:slide|global={{ duration: 250 }}>
                 <Tabs
                   name="route"
                   tabs={routeFilters}
@@ -187,7 +187,7 @@
 
             {#if filter === 'upcoming'}
               <span
-                transition:slide={{ duration: 250 }}
+                transition:slide|global={{ duration: 250 }}
                 class="-mb-4 inline-block text-sm leading-5 tracking-tight dark:text-gray-400"
               >
                 <Icon

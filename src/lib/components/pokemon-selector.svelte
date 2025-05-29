@@ -561,7 +561,7 @@
         <Icon inline={true} height="1.4em" icon={Dots} class="fill-current" />
 
         <ul
-          in:fly={{ duration: 250, x: 50 }}
+          in:fly|global={{ duration: 250, x: 50 }}
           class="popover flex w-44 flex-col divide-y rounded-xl bg-white pt-2 shadow-lg dark:divide-gray-600 dark:bg-gray-900"
           slot="popover"
         >
